@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>The Sparks Foundation Internship</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .input-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #9d7647;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px; /* Add margin-top to create space */
+    }
+    
+    .flower-image {
+      width: 100%;
+      max-width: 200px;
+      margin: 0 auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Prediction of room occupancy: Younes GUENDOUL</h1>
+    <div class="input-group">
+      <label for="input1">Temperature:</label>
+      <input type="number" id="input1" step="0.01" placeholder="Enter a float number">
+    </div>
+    <div class="input-group">
+      <label for="input2">Light:</label>
+      <input type="number" id="input2" step="0.01" placeholder="Enter a float number">
+    </div>
+    <div class="input-group">
+      <label for="input3">CO2:</label>
+      <input type="number" id="input3" step="0.01" placeholder="Enter a float number">
+    </div>
+    <div class="input-group">
+      <label for="input4">HumidityRatio:</label>
+      <input type="number" id="input4" step="0.01" placeholder="Enter a float number">
+    </div>
+    <img src="https://i1.wp.com/blog.apnacomplex.com/wp-content/uploads/2016/08/occupancy_logo.png?resize=1024%2C276&ssl=1" alt="Purple Flower" class="flower-image">
+    <button onclick="predict()">Predict</button>
+    <p class="result" id="prediction"></p>
+  </div>
+
+  <script>
+    function predict() {
+      var input1 = parseFloat(document.getElementById("input1").value);
+      var input2 = parseFloat(document.getElementById("input2").value);
+      var input3 = parseFloat(document.getElementById("input3").value);
+      var input4 = parseFloat(document.getElementById("input4").value);
+
+
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "/predict", true);
+      xhr.setRequestHeader("Content-Type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          document.getElementById("prediction").textContent = "Prediction: " + response.prediction;
+        }
+      };
+      var data = JSON.stringify({ input1: input1, input2: input2, input3: input3, input4: input4 });
+      xhr.send(data);
+    }
+  </script>
+</body>
+</html>
+
