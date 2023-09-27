@@ -10,5 +10,3 @@ Businesses and homeowners can reduce their utility bills by efficiently managing
 ## ***Picture 2***
 ![Capture d’écran (1000)](https://github.com/YounesGuendoul/Room_occupancy_prediction/assets/123268300/70ff3532-7d7f-4176-bade-d10dfddb8fb0)
 
-## ***Picture 3***
-![Capture d’écran (1001)](https://github.com/YounesGuendoul/Room_occupancy_prediction/assets/123268300/dfb6fb1a-0c1f-44da-8c8f-5496992370b0)
