@@ -1,5 +1,5 @@
 # Room_occupancy_prediction
-Prediction of room occupancy using classification algorithms (Random Forest - Decision Tree - SVM - KNN - Logistic Regression) by extracting values collected from sensors (DHT11 - MQ2 - LDR) achivieng an accuracy of 99% and deploying it on a website
+Prediction of room occupancy using classification algorithms (Random Forest - Decision Tree - SVM - KNN - Logistic Regression) by extracting values collected from sensors (DHT11 - MQ2 - LDR) using Arduino achivieng an accuracy of 99% and deploying it on a website
 By accurately predicting room occupancy, you can optimize heating, ventilation, and air conditioning (HVAC) systems. Empty rooms can be set to a lower energy mode or turned off, leading to energy savings. 
 Businesses and homeowners can reduce their utility bills by efficiently managing their HVAC systems based on room occupancy.
 
